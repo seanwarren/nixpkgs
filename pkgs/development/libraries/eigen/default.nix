@@ -9,7 +9,7 @@ stdenv.mkDerivation {
   src = fetchurl {
     url = "https://bitbucket.org/eigen/eigen/get/7577527c33a6c4df8a321ea50378285cae83c3dd.tar.gz";
     name = "eigen-eigen-7577527c33a6.tar.gz";
-    sha256 = "1f7a5zvcx5iway1gp9s3qk1yb3jrkam2lr1cqwd3jq3s3lldsp7p";
+    sha256 = "1x4hj4wmn6mnphwkw7w6ylrfzcxmmrwiznhij10p6xwsdc6g6azk";
   };
 
   patches = [
