@@ -1,15 +1,15 @@
 {stdenv, fetchurl, cmake}:
 
 let
-  version = "3.3.7";
+  version = "3.3.7a";
 in
 stdenv.mkDerivation {
   name = "eigen-${version}";
 
   src = fetchurl {
-    url = "https://bitbucket.org/eigen/eigen/get/${version}.tar.gz";
+    url = "https://bitbucket.org/eigen/eigen/get/7577527c33a6c4df8a321ea50378285cae83c3dd.tar.gz";
     name = "eigen-${version}.tar.gz";
-    sha256 = "1nnh0v82a5xibcjaph51mx06mxbllk77fvihnd5ba0kpl23yz13y";
+    sha256 = "1f7a5zvcx5iway1gp9s3qk1yb3jrkam2lr1cqwd3jq3s3lldsp7p";
   };
 
   patches = [
