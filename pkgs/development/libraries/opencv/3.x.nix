@@ -54,8 +54,6 @@ let
   # Contrib must be built in order to enable Tesseract support:
   buildContrib = enableContrib || enableTesseract;
 
-  useSystemProtobuf = false;
-
   # See opencv/3rdparty/ippicv/ippicv.cmake
   ippicv = {
     src = fetchFromGitHub {
@@ -174,7 +172,6 @@ stdenv.mkDerivation rec {
 
   buildInputs =
        [ zlib pcre hdf5 glog boost google-gflags ]
-  #  ++ lib.optional useSystemProtobuf protobuf
     ++ lib.optional enablePython pythonPackages.python
     ++ lib.optional enableGtk2 gtk2
     ++ lib.optional enableGtk3 gtk3
@@ -213,9 +210,8 @@ stdenv.mkDerivation rec {
   OpenBLAS_HOME = lib.optionalString enableOpenblas openblas;
 
   cmakeFlags = [
+    "-D-DBUILD_LIST=core,highgui,imgproc,imgcodecs,video,videoio,calib3d,cudafeatures2d,features2d,xfeatures2d"
     "-DWITH_OPENMP=ON"
-#    "-DBUILD_PROTOBUF=${printEnabled (!useSystemProtobuf)}"
-#    "-DPROTOBUF_UPDATE_FILES=${printEnabled useSystemProtobuf}"
     "-DWITH_PROTOBUF=OFF"
     "-DOPENCV_ENABLE_NONFREE=${printEnabled enableUnfree}"
     "-DBUILD_TESTS=OFF"
