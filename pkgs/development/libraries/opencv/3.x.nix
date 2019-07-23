@@ -1,7 +1,7 @@
 { lib, stdenv
 , fetchurl, fetchFromGitHub, fetchpatch
 , cmake, pkgconfig, unzip, zlib, pcre, hdf5
-, glog, boost, google-gflags, protobuf
+, glog, boost, google-gflags
 , config
 
 , enableJPEG      ? true, libjpeg
@@ -174,7 +174,7 @@ stdenv.mkDerivation rec {
 
   buildInputs =
        [ zlib pcre hdf5 glog boost google-gflags ]
-    ++ lib.optional useSystemProtobuf protobuf
+  #  ++ lib.optional useSystemProtobuf protobuf
     ++ lib.optional enablePython pythonPackages.python
     ++ lib.optional enableGtk2 gtk2
     ++ lib.optional enableGtk3 gtk3
@@ -214,8 +214,9 @@ stdenv.mkDerivation rec {
 
   cmakeFlags = [
     "-DWITH_OPENMP=ON"
-    "-DBUILD_PROTOBUF=${printEnabled (!useSystemProtobuf)}"
-    "-DPROTOBUF_UPDATE_FILES=${printEnabled useSystemProtobuf}"
+#    "-DBUILD_PROTOBUF=${printEnabled (!useSystemProtobuf)}"
+#    "-DPROTOBUF_UPDATE_FILES=${printEnabled useSystemProtobuf}"
+    "-DWITH_PROTOBUF=OFF"
     "-DOPENCV_ENABLE_NONFREE=${printEnabled enableUnfree}"
     "-DBUILD_TESTS=OFF"
     "-DBUILD_PERF_TESTS=OFF"
