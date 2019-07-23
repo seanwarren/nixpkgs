@@ -1000,8 +1000,8 @@ in
 
   libtensorflow = callPackage ../development/libraries/libtensorflow {
     inherit (linuxPackages) nvidia_x11;
-    cudatoolkit = cudatoolkit_9_0;
-    cudnn = cudnn_cudatoolkit_9_0;
+    cudatoolkit = cudatoolkit_10_0;
+    cudnn = cudnn_cudatoolkit_10_0;
   };
 
   blink1-tool = callPackage ../tools/misc/blink1-tool { };
@@ -2184,7 +2184,7 @@ in
     cudatoolkit_10
     cudatoolkit_10_0;
 
-  cudatoolkit = cudatoolkit_9;
+  cudatoolkit = cudatoolkit_10_0;
 
   inherit (callPackages ../development/libraries/science/math/cudnn { })
     cudnn_cudatoolkit_7
@@ -2198,7 +2198,7 @@ in
     cudnn_cudatoolkit_10
     cudnn_cudatoolkit_10_0;
 
-  cudnn = cudnn_cudatoolkit_9;
+  cudnn = cudnn_cudatoolkit_10_0;
 
   curlFull = curl.override {
     idnSupport = true;
