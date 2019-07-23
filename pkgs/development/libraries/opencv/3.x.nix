@@ -54,7 +54,7 @@ let
   # Contrib must be built in order to enable Tesseract support:
   buildContrib = enableContrib || enableTesseract;
 
-  useSystemProtobuf = ! stdenv.isDarwin;
+  useSystemProtobuf = false;
 
   # See opencv/3rdparty/ippicv/ippicv.cmake
   ippicv = {
