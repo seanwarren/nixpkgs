@@ -1,5 +1,8 @@
 { stdenv
 , eigen
+, suitesparse
+, openblas
+, liblapack
 , fetchurl
 , cmake
 , google-gflags
@@ -20,8 +23,14 @@ stdenv.mkDerivation rec {
   };
 
   nativeBuildInputs = [ cmake ];
-  buildInputs = [ eigen glog ]
+  buildInputs = [ eigen suitesparse glog openblas liblapack ]
     ++ stdenv.lib.optional runTests google-gflags;
+
+  cmakeFlags = [
+    "-DBUILD_TESTING=OFF"
+    "-DBUILD_EXAMPLES=OFF"
+    "-DBUILD_SHARED_LIBS=ON"
+  ];
 
   # The Basel BUILD file conflicts with the cmake build directory on
   # case-insensitive filesystems, eg. darwin.
