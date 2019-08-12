@@ -210,7 +210,6 @@ stdenv.mkDerivation rec {
   OpenBLAS_HOME = lib.optionalString enableOpenblas openblas;
 
   cmakeFlags = [
-    "-DBUILD_LIST=core,highgui,imgproc,imgcodecs,video,videoio,calib3d,cudev,cudafeatures2d,features2d,xfeatures2d"
     "-DWITH_OPENMP=ON"
     "-DWITH_PROTOBUF=OFF"
     "-DOPENCV_ENABLE_NONFREE=${printEnabled enableUnfree}"
