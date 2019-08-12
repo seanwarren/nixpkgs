@@ -410,6 +410,8 @@ in {
 
   grandalf = callPackage ../development/python-modules/grandalf { };
 
+  graphyte = callPackage ../development/python-modules/graphyte { };
+
   gprof2dot = callPackage ../development/python-modules/gprof2dot { };
 
   gsd = callPackage ../development/python-modules/gsd { };
@@ -5383,6 +5385,30 @@ in {
   pytado = callPackage ../development/python-modules/pytado { };
 
   casttube = callPackage ../development/python-modules/casttube { };
+
+  s2sphere = callPackage ../development/python-modules/s2sphere { };
+
+  lru-dict = callPackage ../development/python-modules/lru-dict { };
+
+  pyhocon = callPackage ../development/python-modules/pyhocon { };
+
+  geographiclib = callPackage ../development/python-modules/geographiclib { };
+
+  apiclient = callPackage ../development/python-modules/apiclient { };
+
+  atomic = callPackage ../development/python-modules/atomic { };
+  
+  pylint-protobuf = callPackage ../development/python-modules/pylint-protobuf { };
+
+  astrolabe = callPackage ../development/python-modules/astrolabe { };
+
+  asyncio-nats-client = callPackage ../development/python-modules/asyncio-nats-client { };
+
+  awscli = callPackage ../development/python-modules/awscli { };
+
+  ganglia = callPackage ../development/python-modules/ganglia { };
+
+  metrology = callPackage ../development/python-modules/metrology { };
 
 });
 
