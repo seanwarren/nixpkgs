@@ -4,7 +4,7 @@
   gfortran,
   cmake,
   python2,
-  shared ? false
+  shared ? true
 }:
 let
   inherit (stdenv.lib) optional;
