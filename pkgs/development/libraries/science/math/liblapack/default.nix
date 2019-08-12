@@ -4,7 +4,7 @@
   gfortran,
   cmake,
   python2,
-  shared ? false
+  shared ? true
 }:
 let
   usedLibExtension = if shared then ".so" else ".a";
