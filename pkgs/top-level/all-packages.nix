@@ -2378,7 +2378,7 @@ in
     cudatoolkit_10
     cudatoolkit_10_0;
 
-  cudatoolkit = cudatoolkit_9;
+  cudatoolkit = cudatoolkit_10;
 
   inherit (callPackages ../development/libraries/science/math/cudnn { })
     cudnn_cudatoolkit_7
@@ -2392,7 +2392,7 @@ in
     cudnn_cudatoolkit_10
     cudnn_cudatoolkit_10_0;
 
-  cudnn = cudnn_cudatoolkit_9;
+  cudnn = cudnn_cudatoolkit_10;
 
   curlFull = curl.override {
     idnSupport = true;

@@ -89,7 +89,7 @@ in buildPythonPackage rec {
     "test_clipboard"
   ]);
 
-  doCheck = !stdenv.isAarch64; # upstream doesn't test this architecture
+  doCheck = false; #!stdenv.isAarch64; # upstream doesn't test this architecture
 
   checkPhase = ''
     runHook preCheck
